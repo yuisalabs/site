@@ -1,16 +1,41 @@
+import { PALETTE } from '@/theme/palette'
+
 export const HERO_CONFIG = {
   text: 'YUISALABS',
   tagline: 'Experimenting Ideas, Creating Impact.',
-  backgroundColor: '#FEFCF8',
+  backgroundColor: PALETTE.cream,
 }
 
+/** Dual-panel tagline — uses full palette */
+export const TAGLINE_PANELS = {
+  /** Diamond junction accent */
+  accent: PALETTE.taupe,
+  slabTop: PALETTE.cream,
+  leftBg: PALETTE.sand,
+  rightBg: PALETTE.lavender,
+  vennFill: PALETTE.sand,
+  left: {
+    label: 'Labs',
+    headline: 'We experiment with ideas, research, and design that create lasting impact.',
+  },
+  right: {
+    headline: 'We offer end-to-end creative and product thinking.',
+    subtext:
+      'We give your brand a clear personality and presence—true to its purpose and voice.',
+  },
+} as const
+
 export const COLORS = {
-  primary: '#a855f7',
-  primaryHover: '#c084fc',
+  primary: PALETTE.lavender,
+  /** Slightly lighter lavender for hover */
+  primaryHover: '#b9a3c0',
   black: '#000000',
   white: '#FFFFFF',
-  grid: '#e5e7eb',
-  text: '#9a9a9a',
+  grid: PALETTE.sand,
+  text: '#5c5349',
+  cream: PALETTE.cream,
+  sand: PALETTE.sand,
+  taupe: PALETTE.taupe,
 }
 
 export const CANVAS = {
@@ -26,7 +51,7 @@ export const CANVAS = {
 
 export const ANIMATION = {
   textFontSize: 'clamp(48px, 10vw, 120px)',
-  textStroke: '3px',
+  textFontFamily: "'Archivo Black', sans-serif",
   fillStroke: 3,
   gridStroke: 1,
   baseStroke: 2,
@@ -50,8 +75,8 @@ export const ANIMATION_TIMING = {
 
 export const HEADER = {
   gap: {
-    sm: 'gap-3',
-    lg: 'lg:gap-6',
+    sm: 'gap-2',
+    lg: 'lg:gap-4',
   },
   padding: {
     x: 'px-6',

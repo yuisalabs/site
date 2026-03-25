@@ -51,34 +51,34 @@ function AnimatedLetter({ char, duration, delay, textShadow }: AnimatedLetterPro
       className="relative h-fit w-fit cursor-pointer p-1.5 transition-colors duration-300"
       style={
         {
+          fontFamily: ANIMATION.textFontFamily,
           transformStyle: 'preserve-3d',
           color: COLORS.primary,
-          WebkitTextStroke: `${ANIMATION.textStroke} ${COLORS.black}`,
           '--color1': COLORS.black,
-          '--color2': '#FEFCF8',
+          '--color2': COLORS.cream,
         } as React.CSSProperties
       }
       onMouseEnter={(e) => {
         e.currentTarget.style.color = COLORS.primaryHover
         e.currentTarget.style.setProperty('--color1', COLORS.black)
-        e.currentTarget.style.setProperty('--color2', '#FEFCF8')
+        e.currentTarget.style.setProperty('--color2', COLORS.cream)
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.color = COLORS.primary
         e.currentTarget.style.setProperty('--color1', COLORS.black)
-        e.currentTarget.style.setProperty('--color2', '#FEFCF8')
+        e.currentTarget.style.setProperty('--color2', COLORS.cream)
       }}
     >
       {/* Shadow Outline Layer */}
       <span
         className="pointer-events-none absolute transition-all duration-300"
         style={{
-          fontFamily: "'Lexend Mega', sans-serif",
+          fontFamily: ANIMATION.textFontFamily,
           fontSize: ANIMATION.textFontSize,
-          fontWeight: 800,
+          fontWeight: 900,
           textShadow,
           color: 'transparent',
-          WebkitTextStroke: '0px transparent',
+          letterSpacing: '-0.02em',
           animation: `popShadowAnim ${duration}s infinite`,
           animationDelay: `${delay}s`,
         }}
@@ -90,9 +90,10 @@ function AnimatedLetter({ char, duration, delay, textShadow }: AnimatedLetterPro
       <span
         className="relative block pointer-events-none transition-all duration-300"
         style={{
-          fontFamily: "'Lexend Mega', sans-serif",
+          fontFamily: ANIMATION.textFontFamily,
           fontSize: ANIMATION.textFontSize,
-          fontWeight: 800,
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
           animation: `popText ${duration}s infinite`,
           animationDelay: `${delay}s`,
         }}

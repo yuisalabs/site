@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 
+import { PALETTE } from '@/theme/palette'
+
 export const metadata = {
   title: 'About | Yuisalabs',
   description: 'Learn about Yuisalabs.',
@@ -8,11 +10,15 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-dvh bg-[#FEFCF8] px-6 py-24 text-neutral-800">
+    <div
+      className="min-h-dvh px-6 py-24 text-neutral-800"
+      style={{ backgroundColor: PALETTE.cream }}
+    >
       <div className="mx-auto max-w-2xl">
         <Link
           href="/"
-          className="mb-10 inline-block font-medium text-[#a855f7] underline-offset-4 hover:underline"
+          className="mb-10 inline-block font-medium underline-offset-4 hover:underline"
+          style={{ color: PALETTE.lavender }}
         >
           ← Home
         </Link>

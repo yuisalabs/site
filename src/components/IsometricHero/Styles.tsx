@@ -1,7 +1,7 @@
 export function HeroStyles() {
   return (
     <style>{`
-      @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Lexend+Mega:wght@100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Archivo+Black:wght@400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
       @keyframes popText {
         0%, 15% { transform: translate(-17px, 17px); }
@@ -13,6 +13,12 @@ export function HeroStyles() {
         0%, 15% { opacity: 0; }
         25%, 85% { opacity: 1; }
         95%, 100% { opacity: 0; }
+      }
+
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
       }
     `}</style>
   )

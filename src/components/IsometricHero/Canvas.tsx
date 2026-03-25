@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 
+import { PALETTE_RGB } from '@/theme/palette'
+
 import { ANIMATION, CANVAS, COLORS } from './constants'
 import {
   GridBounds,
@@ -220,7 +222,7 @@ function drawCell(
 
   // Draw active cell (with fill and stroke)
   if (fillOpacity > 0) {
-    ctx.fillStyle = `rgba(168, 85, 247, ${fillOpacity})`
+    ctx.fillStyle = `rgba(${PALETTE_RGB.lavender}, ${fillOpacity})`
     ctx.fillRect(rectX + offset, rectY + offset, drawSize, drawSize)
     ctx.strokeStyle = `rgba(0, 0, 0, ${fillOpacity})`
     ctx.lineWidth = ANIMATION.fillStroke
