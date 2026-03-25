@@ -29,19 +29,21 @@ export function IsometricHero() {
       <Header />
 
       {/*
-       * Mobile  (< md): flex-col. Text fills the upper space, tagline
+       * Mobile  (< lg): flex-col. Text fills the upper space, tagline
        *   snaps to the bottom with mt-auto.
-       * Desktop (≥ md): flex-row. Text area is flex-1 (left), tagline is
+       * Desktop (≥ lg): flex-row. Text area is flex-1 (left), tagline is
        *   a fixed-width column (right); both are vertically centred.
        */}
-      <div className="pointer-events-none relative z-10 flex flex-1 w-full flex-col px-4 pt-24 pb-[max(1rem,env(safe-area-inset-bottom))] md:flex-row md:items-center md:px-12 md:pt-0 md:pb-8 md:gap-8 lg:gap-12 lg:px-16">
+      <div className="pointer-events-none relative z-10 flex flex-1 w-full flex-col px-4 pt-24 pb-[max(1rem,env(safe-area-inset-bottom))] lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:pt-0 lg:pb-8 lg:gap-12">
         {/* Text zone — centred on both axes; visually large due to skew */}
-        <div className="flex flex-1 items-center justify-center">
-          <AnimatedText text={HERO_CONFIG.text} textShadow={textShadow} />
+        <div className="flex flex-1 items-center justify-center lg:justify-start">
+          <div className="lg:-ml-12">
+            <AnimatedText text={HERO_CONFIG.text} textShadow={textShadow} />
+          </div>
         </div>
 
-        {/* Tagline zone — bottom on mobile, fixed-width right column on desktop */}
-        <div className="pointer-events-auto mt-auto w-full md:mt-0 md:w-[340px] md:shrink-0 lg:w-[400px]">
+        {/* Tagline zone — bottom on mobile/tablet, fixed-width right column on desktop */}
+        <div className="pointer-events-auto mt-auto w-full lg:mt-0 lg:w-[420px] lg:shrink-0">
           <Tagline />
         </div>
       </div>

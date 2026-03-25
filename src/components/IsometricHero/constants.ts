@@ -50,7 +50,7 @@ export const CANVAS = {
 }
 
 export const ANIMATION = {
-  textFontSize: 'clamp(48px, 10vw, 120px)',
+  textFontSize: 'clamp(42px, 8vw, 110px)',
   textFontFamily: "'Archivo Black', sans-serif",
   fillStroke: 3,
   gridStroke: 1,
