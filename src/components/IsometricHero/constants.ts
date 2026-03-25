@@ -15,7 +15,7 @@ export const TAGLINE_PANELS = {
   rightBg: PALETTE.lavender,
   vennFill: PALETTE.sand,
   left: {
-    label: 'Labs',
+    label: '- Yuisalabs',
     headline: 'We experiment with ideas, research, and design that create lasting impact.',
   },
   right: {

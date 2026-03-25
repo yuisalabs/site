@@ -17,7 +17,7 @@ export function IsometricHero() {
   return (
     <div
       ref={containerRef}
-      className="relative flex h-dvh min-h-0 w-full flex-col items-center justify-center overflow-hidden"
+      className="relative flex h-dvh min-h-0 w-full flex-col overflow-hidden"
       style={{
         perspective: '1000px',
         backgroundColor: HERO_CONFIG.backgroundColor,
@@ -28,9 +28,22 @@ export function IsometricHero() {
 
       <Header />
 
-      <div className="pointer-events-none relative z-10 mt-8 flex w-full max-w-7xl flex-col items-center justify-center gap-10 px-4 pb-8 md:mt-0 md:flex-row md:items-start md:gap-12 md:px-8 md:pb-0 lg:gap-16">
-        <AnimatedText text={HERO_CONFIG.text} textShadow={textShadow} />
-        <Tagline />
+      {/*
+       * Mobile  (< md): flex-col. Text fills the upper space, tagline
+       *   snaps to the bottom with mt-auto.
+       * Desktop (≥ md): flex-row. Text area is flex-1 (left), tagline is
+       *   a fixed-width column (right); both are vertically centred.
+       */}
+      <div className="pointer-events-none relative z-10 flex flex-1 w-full flex-col px-4 pt-24 pb-[max(1rem,env(safe-area-inset-bottom))] md:flex-row md:items-center md:px-12 md:pt-0 md:pb-8 md:gap-8 lg:gap-12 lg:px-16">
+        {/* Text zone — centred on both axes; visually large due to skew */}
+        <div className="flex flex-1 items-center justify-center">
+          <AnimatedText text={HERO_CONFIG.text} textShadow={textShadow} />
+        </div>
+
+        {/* Tagline zone — bottom on mobile, fixed-width right column on desktop */}
+        <div className="pointer-events-auto mt-auto w-full md:mt-0 md:w-[340px] md:shrink-0 lg:w-[400px]">
+          <Tagline />
+        </div>
       </div>
     </div>
   )

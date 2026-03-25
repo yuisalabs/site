@@ -67,7 +67,7 @@ export function Tagline() {
   const { left, right, slabTop, leftBg, rightBg } = TAGLINE_PANELS
 
   return (
-    <div className="pointer-events-auto w-full max-w-[min(100%,42rem)] md:max-w-[min(100%,52rem)] lg:max-w-[min(100%,62rem)]">
+    <div className="w-full">
       <div className="relative flex flex-col border-2 border-black shadow-[6px_6px_0_0_#000] md:flex-row">
         <div className="relative flex min-w-0 flex-1 flex-col border-b-2 border-black md:border-r-2 md:border-b-0">
           <SlabTop color={slabTop} />
@@ -88,7 +88,7 @@ export function Tagline() {
               >
                 {left.label}
               </span>
-              <ArrowUpRight />
+              <a href="/about"><ArrowUpRight /></a>
             </div>
           </div>
         </div>
