@@ -34,10 +34,10 @@ export function IsometricHero() {
        * Desktop (≥ lg): flex-row. Text area is flex-1 (left), tagline is
        *   a fixed-width column (right); both are vertically centred.
        */}
-      <div className="pointer-events-none relative z-10 flex flex-1 w-full flex-col px-4 pt-24 pb-[max(1rem,env(safe-area-inset-bottom))] lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:pt-0 lg:pb-8 lg:gap-12">
+      <div className="pointer-events-none relative z-10 flex flex-1 w-full flex-col px-4 pt-24 pb-[max(1rem,env(safe-area-inset-bottom))] lg:flex-row lg:items-center lg:justify-between lg:px-16 lg:pt-0 lg:pb-8">
         {/* Text zone — centred on both axes; visually large due to skew */}
-        <div className="flex flex-1 items-center justify-center lg:justify-start">
-          <div className="lg:-ml-12">
+        <div className="flex flex-1 items-center justify-center">
+          <div>
             <AnimatedText text={HERO_CONFIG.text} textShadow={textShadow} />
           </div>
         </div>
